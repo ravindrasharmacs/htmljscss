@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "name": "string-reversal",
+  "version": "1.0.0",
+  "description": "A program to reverse strings using ES modules",
+  "main": "main.js"
+}
