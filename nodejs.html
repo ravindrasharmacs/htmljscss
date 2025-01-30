@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodejs -Question and Answer</title>
+</head>
+<body>
+    <div class="question-container">
+        <h2>Question:</h2>
+        <p id="question1">Q1. How does event loop architecture work in Node.js?</p>
+        
+        <label for="answer">Answer:</label>
+        
+        
+        <p id="result"></p>
+        
+        <h2>Event Loop Phases:</h2>
+        <p>
+            Timers: This phase executes callbacks scheduled by <code>setTimeout()</code> and <code>setInterval()</code>. If there are any timer callbacks that are due to execute, they will be processed here.
+        </p>
+        <p>
+            I/O Callbacks: Executes I/O callbacks deferred from the previous cycle. These include almost all callbacks except for close callbacks, the ones scheduled by timers, and <code>setImmediate</code>.
+        </p>
+        <p>
+            Idle, Prepare: Only used internally in Node.js for specific operations.
+        </p>
+        <p>
+            Poll: This phase retrieves new I/O events and executes their callbacks. During this phase, the event loop processes events for an indefinite period until the polling queue becomes empty.
+        </p>
+        <p>
+            Check: Executes callbacks scheduled by <code>setImmediate()</code>. These callbacks are executed immediately after the polling phase.
+        </p>
+        <p>
+            Close Callbacks: Executes close callbacks, such as <code>socket.on('close', ...)</code>.
+        </p>
+        <h2>How it Works:</h2>
+        <p>
+            When Node.js starts, it initializes the event loop, processes the input script, and then starts executing the event loop.
+        </p>
+        <p>
+            Asynchronous operations, such as I/O and timers, are scheduled in the corresponding phases of the event loop.
+        </p>
+        <p>
+            The event loop picks up these tasks in each cycle and processes them until there are no more tasks to handle.
+        </p>
+        <img src="images/nodejseventlop.png" height="250" width="250" alt="Node.js Event Loop">
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value.toLowerCase();
+            const correctAnswer = 'the event loop processes asynchronous operations efficiently by cycling through different phases including timers, i/o callbacks, poll, check, and close callbacks.'.toLowerCase(); // Updated correct answer to match the description
+            const resultElement = document.getElementById('result');
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = 'Correct! Well done!';
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.textContent = 'Sorry, that\'s incorrect. Try again!';
+                resultElement.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
