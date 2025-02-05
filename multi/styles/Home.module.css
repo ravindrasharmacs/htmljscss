@@ -1,0 +1,27 @@
+/* Add these styles to the existing styles in Home.module.css */
+
+.input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0051a2;
+}
+
+.result {
+  font-size: 24px;
+  margin-top: 20px;
+}
