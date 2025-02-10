@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>User Inputs</title>
+    </head>
+</html>
+<body>
+    <button onclick="alert('Hello World')">Click me</button>
+
+    <!--Form input-->
+    <form id="myForm">
+        <input type="text" id="myInput" placeholder="Enter text here">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!--Confirm dialog box-->
+    <button onclick="confirm('Are you sure you want to proceed?')">Confirm</button>
+
+    <!--Prompt dialog box-->
+    <script>
+   function promptExample() {
+        let name = prompt("Please enter your name:");
+        if (name!= null) {
+            alert("Hello " + name);
+        }
+    }
+
+    function confirmExample() {
+        let result = confirm("Are you sure you want to delete?");
+        if (result) {
+            alert("File deleted successfully.");
+        } else {
+            alert("File deletion cancelled.");
+        }
+        }
+    </script> 
+</body>
+
